@@ -14,7 +14,8 @@ static struct window_view_data default_view_data =
 
 void window_initialize(void)
 {	window_view_data = default_view_data;
-	window = sfRenderWindow_create((sfVideoMode){ .width = 900, .height = 900 }, "Quadratic Bezier Splines Visualizer", sfDefaultStyle, NULL);
+	sfContextSettings context_settings = { .antialiasingLevel = 16 };
+	window = sfRenderWindow_create((sfVideoMode){ .width = 900, .height = 900 }, "Quadratic Bezier Splines Visualizer", sfDefaultStyle, &context_settings);
 	sfRenderWindow_setVerticalSyncEnabled(window, true);
 	window_recompute_view();
 }
@@ -36,12 +37,12 @@ void window_recompute_view(void)
 
 	sfVector2f view_size =
 	{	.x = window_size.x / shorter_window_side / window_view_data.zoom_level,
-		.y = window_size.y / shorter_window_side / window_view_data.zoom_level
+		.y = -(window_size.y / shorter_window_side / window_view_data.zoom_level)
 	};
 
 	sfVector2f view_position =
 	{	.x = .5 + window_view_data.position.x,
-		.y = .5 + window_view_data.position.y
+		.y = .5 - window_view_data.position.y
 	};
 
 	sfView * view = sfView_create();

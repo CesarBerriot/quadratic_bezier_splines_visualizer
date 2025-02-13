@@ -16,7 +16,7 @@ void handle_events(void)
 					if(!last.computed)
 						last.event = event.mouseMove;
 
-					if(sfMouse_isButtonPressed(sfMouseLeft) || sfMouse_isButtonPressed(sfMouseRight))
+					if(sfMouse_isButtonPressed(sfMouseLeft) || sfMouse_isButtonPressed(sfMouseMiddle) || sfMouse_isButtonPressed(sfMouseRight))
 					{	float sensitivity = .001;
 						float scale_factor = -(sensitivity / window_view_data.zoom_level);
 						window_view_data.position.x += (event.mouseMove.x - last.event.x) * scale_factor;

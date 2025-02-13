@@ -9,6 +9,7 @@ add_library(
         source/window/renderer/renderer.c
         source/window/renderer/sub_renderers/splines/splines.c
         source/spline_registry/spline_registry.c
+        source/math/math.c
 )
 target_include_directories(quadratic_bezier_splines_visualizer PUBLIC source/include PRIVATE source)
 link_csfml(quadratic_bezier_splines_visualizer)
