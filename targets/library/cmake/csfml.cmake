@@ -1,0 +1,2 @@
+file(DOWNLOAD https://raw.githubusercontent.com/CesarBerriot/csfml_windows/refs/heads/master/csfml_windows.cmake ${CMAKE_BINARY_DIR}/csfml_windows/csfml_windows.cmake)
+include(${CMAKE_BINARY_DIR}/csfml_windows/csfml_windows.cmake)
