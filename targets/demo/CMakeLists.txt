@@ -1,0 +1,2 @@
+add_executable(cubic_bezier_splines_visualizer_demo WIN32 source/main.c)
+target_link_libraries(cubic_bezier_splines_visualizer_demo PRIVATE cubic_bezier_splines_visualizer)
